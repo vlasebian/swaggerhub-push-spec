@@ -1,0 +1,20 @@
+name: Publish API spec on SwaggerHub
+description: Github Action used to publish an API spec from a repository to SwaggerHub
+inputs:
+  api_name:
+    description: Name of the API to create or update
+    required: true
+  api_owner:
+    description: Owner of the API
+    required: true
+  api_spec_file_path: 
+    description: Path to the YML file containing the API spec
+    required: true
+    default: ./api/swagger.yml
+  swaggerhub_api_key:
+    description: SwaggerHub API Auth Key
+    required: true
+  
+runs:
+  using: docker
+  image: 'Dockerfile'

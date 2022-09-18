@@ -1,0 +1,18 @@
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  swaggerhub_api_spec_push:
+    runs-on: ubuntu-latest
+    name: Push API spec to SwaggerHub
+    steps:
+      - uses: actions/checkout@v3
+      - id: swaggerhub_api_spec_push
+        uses: vlasebian/swaggerhub-push-spec@main
+        with:
+          api_name: "Sample"
+          api_owner: "VLADVITAN"
+          api_spec_file_path: ./api/swagger.yml
+          swaggerhub_api_key: ${{ secrets.SWAGGERHUB_API_KEY }}
