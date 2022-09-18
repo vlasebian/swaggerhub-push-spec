@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: Sample API
-  version: 9.0.0
+  version: 10.0.0
   description: Optional multiline or single-line description in [CommonMark](http://commonmark.org/help/) or HTML.
 
 servers:
