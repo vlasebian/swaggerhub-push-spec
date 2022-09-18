@@ -1,6 +1,5 @@
 import os
 import yaml
-import github
 import requests
 
 api_name = os.environ["INPUT_API_NAME"]
@@ -19,7 +18,7 @@ print(f"Uploading API spec with version {API_VERSION}...")
 # Upload new api spec
 try:
     r = requests.post(
-        f"{endpoint}?vrsion={API_VERSION}",
+        f"{endpoint}?version={API_VERSION}",
         headers={
             "authorization": swaggerhub_api_key,
             "content-type": "application/yaml",
